@@ -20,6 +20,7 @@ defmodule NounsPhxWeb.Router do
 
     get "/", PageController, :index
     live "/nouns_phx", NounsPhxLive
+    live "/counter", CounterLive
   end
 
   # Other scopes may use custom stacks.
