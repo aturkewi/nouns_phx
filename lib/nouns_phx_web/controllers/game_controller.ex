@@ -11,12 +11,10 @@ defmodule NounsPhxWeb.GameController do
 
   def show(conn, %{"id" => id}) do
     game = NounsPhx.get_game(id)
-    case game.round do
-      0 -> # render adding words
-      4 -> # render game over
-      _ -> # render game play
+    case game.current_round do
+      0 -> redirect(conn, to: Routes.word_path(conn, :new, id))
+      4 -> :ok # render game over
+      _ -> render(conn, "show.html", params: "params")
     end
-
-    render(conn, "show.html", params: params)
   end
 end

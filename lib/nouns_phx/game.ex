@@ -3,8 +3,12 @@ defmodule NounsPhx.Game do
 
   import Ecto.Changeset, only: [cast: 3]
 
+  alias NounsPhx.Word
+
   schema("games") do
     field(:current_round, :integer)
+
+    has_many(:words, Word)
   end
 
   def new_changeset() do

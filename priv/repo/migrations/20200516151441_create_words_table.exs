@@ -4,6 +4,7 @@ defmodule NounsPhx.Repo.Migrations.CreateWordsTable do
   def change do
     create table("words") do
       add :name, :string, null: false
+      add :game_id, :integer, null: false
       add :round_1, :integer
       add :round_2, :integer
       add :round_3, :integer

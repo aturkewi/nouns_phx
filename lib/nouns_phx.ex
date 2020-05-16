@@ -7,7 +7,7 @@ defmodule NounsPhx do
   if it comes from the database, an external API or others.
   """
 
-  alias NounsPhx.{Game, Repo}
+  alias NounsPhx.{Game, Repo, Word}
 
   def create_game() do
     Game.new_changeset()
@@ -15,6 +15,18 @@ defmodule NounsPhx do
   end
 
   def get_game(id) do
-    Repo.get(Game, id)
+    Game
+    |> Repo.get(id)
+    |> Repo.preload(:words)
+  end
+
+  def new_word(game_id) do
+    Word.new_word_changeset(game_id)
+  end
+
+  def create_word(attrs) do
+    attrs
+    |> Word.create_word()
+    |> Repo.insert
   end
 end
