@@ -7,11 +7,14 @@ defmodule NounsPhx do
   if it comes from the database, an external API or others.
   """
 
-  alias NounsPhx.Game
-  alias NounsPhx.Repo
+  alias NounsPhx.{Game, Repo}
 
   def create_game() do
-    Game.new()
+    Game.new_changeset()
     |> Repo.insert()
+  end
+
+  def get_game(id) do
+    Repo.get(Game, id)
   end
 end

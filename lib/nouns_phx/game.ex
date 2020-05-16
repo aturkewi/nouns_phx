@@ -8,7 +8,7 @@ defmodule NounsPhx.Game do
   end
 
   def new_changeset() do
-    __MODULE__
+    %__MODULE__{}
     |> cast(%{current_round: 0}, [:current_round])
   end
 end

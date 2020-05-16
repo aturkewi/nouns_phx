@@ -1,0 +1,4 @@
+<h2>Params:</h2>
+<%= inspect(@params) %>
+<h2>Conn:</h2>
+<%= inspect(@conn) %>

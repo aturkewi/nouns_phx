@@ -21,6 +21,9 @@ defmodule NounsPhxWeb.Router do
     get "/", PageController, :index
 
     post "/games", GameController, :create
+    get "/games/:id", GameController, :show
+
+    # live "/games/:id/words", WordsLive
 
     live "/nouns_phx", NounsPhxLive
   end
