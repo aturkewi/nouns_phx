@@ -22,3 +22,16 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - [ ] Following tutorial to learn the basics of live view https://www.poeticoding.com/how-to-setup-phoenix-liveview/
 - [ ] Create a button to 'start a new game'
   - [ ] A game is backed by the database and has a round counter
+
+## Schema
+
+### Simple
+
+- games
+  - current_round
+
+- words
+  - name
+  - round_1
+  - round_2
+  - round_3
