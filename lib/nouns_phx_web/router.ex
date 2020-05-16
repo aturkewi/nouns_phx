@@ -19,6 +19,9 @@ defmodule NounsPhxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    post "/games", GameController, :create
+
     live "/nouns_phx", NounsPhxLive
   end
 
