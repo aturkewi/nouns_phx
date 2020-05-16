@@ -21,11 +21,7 @@ defmodule NounsPhxWeb.WordLive do
   # ~L is sigil for live view template
   # for larger templates, a `.html.leex` file is used
   def render(assigns) do
-    Logger.info("RENDER #{inspect(self())}")
-    ~L"""
-    <label>Words: <%= @words %></label>
-    Add a word!
-    """
+    Phoenix.View.render(NounsPhxWeb.WordView, "new.html", assigns)
   end
 
   def handle_event("increment", event, socket) do
