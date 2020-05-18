@@ -1,2 +1,9 @@
 <label>Words: <%= @words %></label>
 Add a word!
+
+<%= f = form_for(@new_word, "#", [phx_change: :change, phx_submit: :save]) %>
+  <%= label(f, :name) %>
+  <%= text_input(f, :name) %>
+
+  <%= submit("Save") %>
+</form>

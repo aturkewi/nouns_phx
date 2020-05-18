@@ -24,12 +24,15 @@ defmodule NounsPhxWeb.WordLive do
     Phoenix.View.render(NounsPhxWeb.WordView, "new.html", assigns)
   end
 
-  def handle_event("increment", event, socket) do
-    # Here is a more verbose way
-    # socket = assign(socket, :counter, socket.assigns.counter + 1)
+  def handle_event("change", event, socket) do
+    IO.inspect(event, label: "change")
 
-    # Here is a cool function _update/3_
-    socket = update(socket, :counter, &(&1 + 1))
+    {:noreply, socket}
+  end
+
+  def handle_event("save", event, socket) do
+    IO.inspect(event, label: "save")
+
     {:noreply, socket}
   end
 end
